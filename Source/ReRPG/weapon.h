@@ -6,7 +6,7 @@
 #include <unordered_map>
 #include "item.h"
 #include "power.h"
-#include "C:/Users/the1i/CODERZ/tact/ThirdParty/entt/src/entt/entt.hpp"
+#include <entt/entt.hpp>
 #include "CoreMinimal.h"
 
 

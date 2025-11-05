@@ -14,8 +14,7 @@
 				"UMG"
 			]
 		}
-            
-    ],
+	],
 	"Plugins": [
 		{
 			"Name": "ModelingToolsEditorMode",
@@ -41,5 +40,9 @@
 			"Name": "GeneSplicer",
 			"Enabled": true
 		}
+	],
+	"TargetPlatforms": [
+		"Linux",
+		"Windows"
 	]
 }

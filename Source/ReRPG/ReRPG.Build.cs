@@ -42,9 +42,9 @@ public class ReRPG : ModuleRules
 			"ReRPG/Variant_SideScrolling/UI"
 		});
 		
-		PublicSystemIncludePaths.Add(Path.Combine(ModuleDirectory, "C:/Users/the1i/CODERZ/ReRPG/ThirdParty/glm"));
-		PublicSystemIncludePaths.Add(Path.Combine(ModuleDirectory, "C:/Users/the1i/CODERZ/ReRPG/ThirdParty/entt/src"));
-		PublicSystemIncludePaths.Add(Path.Combine(ModuleDirectory, "C:/Users/the1i/CODERZ/ReRPG/ThirdParty/nlohmann"));
+		PublicSystemIncludePaths.Add(Path.Combine(ModuleDirectory, "../../ThirdParty/glm"));
+		PublicSystemIncludePaths.Add(Path.Combine(ModuleDirectory, "../../ThirdParty/entt/src"));
+		PublicSystemIncludePaths.Add(Path.Combine(ModuleDirectory, "../../ThirdParty/nlohmann"));
 
 		// Uncomment if you are using Slate UI
 		// PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });

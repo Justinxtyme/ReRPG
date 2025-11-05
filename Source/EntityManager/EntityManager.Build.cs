@@ -12,9 +12,9 @@ public class EntityManager : ModuleRules
             "CoreUObject",
             "Engine"
         });
-        PublicIncludePaths.Add(Path.Combine(ModuleDirectory, "C:/Users/the1i/CODERZ/ReRPG/ThirdParty/glm"));
-		PublicIncludePaths.Add(Path.Combine(ModuleDirectory, "C:/Users/the1i/CODERZ/ReRPG/ThirdParty/entt/src"));
-        PublicIncludePaths.Add(Path.Combine(ModuleDirectory, "C:/Users/the1i/CODERZ/ReRPG/ThirdParty/nlohmann"));
+        PublicIncludePaths.Add(Path.Combine(ModuleDirectory, "../../ThirdParty/glm"));
+		PublicIncludePaths.Add(Path.Combine(ModuleDirectory, "../../ThirdParty/entt/src"));
+        PublicIncludePaths.Add(Path.Combine(ModuleDirectory, "../../ThirdParty/nlohmann"));
 
         PrivateDependencyModuleNames.AddRange(new string[]
         {
@@ -22,4 +22,6 @@ public class EntityManager : ModuleRules
         });
     }
 }
+
+
 

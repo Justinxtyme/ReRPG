@@ -55,7 +55,18 @@ AReRPGCharacter::AReRPGCharacter()
 
 	// Create the Inventory component as a default subobject
 	InventoryComponent = CreateDefaultSubobject<UInventoryAuthoringComponent>(TEXT("InventoryComponent"));
-	
+
+    // Create the ResourcesComponent as a default subobject
+    ResourcesComponent = CreateDefaultSubobject<UResourcesComponent>(TEXT("ResourcesComponent"));
+
+    // Optionally set defaults here
+    ResourcesComponent->HP    = 100.0f;
+    ResourcesComponent->SP    = 100.0f;
+    ResourcesComponent->MP    = 100.0f;
+    ResourcesComponent->MaxHP = 100.0f;
+    ResourcesComponent->MaxSP = 100.0f;
+    ResourcesComponent->MaxMP = 100.0f;
+
 	
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
@@ -334,7 +345,9 @@ void AReRPGCharacter::BeginPlay()
 	// Convert editor-exposed transform into ECS data
 	// LTransform = UnrealTransToECS(InitialTransform);
 	LResources = UnrealResToEcs(InitialResources);
- 
+
+	//EcsToUnrealRes2(InitialResources, ResourcesComponent);
+	
 	entt::entity e = EntitySubsystem->CreateEntity();
 
 	if (UInventoryAuthoringComponent* Inv = FindComponentByClass<UInventoryAuthoringComponent>())

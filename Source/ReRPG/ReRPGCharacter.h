@@ -155,6 +155,8 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Inventory")
 	UInventoryAuthoringComponent* InventoryComponent;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="UResources")
+	UResourcesComponent* ResourcesComponent;
 
 protected:
 

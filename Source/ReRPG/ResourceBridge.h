@@ -22,3 +22,22 @@ inline FResourceComponent EcsToUnrealRes(const ResourceComponent &Res)
 	
 	return Ures;
 }
+
+inline void EcsToUnrealRes2(const ResourceComponent &Res, UResourcesComponent &Ures)
+{
+	
+	Ures.HP = static_cast<double>(Res.hp);
+	Ures.SP = static_cast<double>(Res.sp);
+	Ures.MP = static_cast<double>(Res.mp);
+	Ures.MaxHP = static_cast<double>(Res.max_hp);
+	Ures.MaxSP = static_cast<double>(Res.max_sp);
+	Ures.MaxMP = static_cast<double>(Res.max_mp);
+	
+	//return Ures;
+}
+
+inline ResourceComponent UnrealRes2ToEcs(const UResourcesComponent &Res)
+{
+	const ResourceComponent Resources(Res.HP, Res.SP, Res.MP, Res.MaxHP, Res.MaxSP, Res.MaxMP);
+	return Resources;
+}

@@ -17,6 +17,8 @@
 #include "TransformBridge.h"
 #include "InventoryData.h"
 //#include "itemfactory.h"
+#include "Progression.h"
+#include "Attributes.h"
 #include "EntityManager/Public/EntityManagerSubsystem.h"
 
 AReRPGCharacter::AReRPGCharacter()
@@ -67,6 +69,23 @@ AReRPGCharacter::AReRPGCharacter()
     ResourcesComponent->MaxSP = 100.0f;
     ResourcesComponent->MaxMP = 100.0f;
 
+	// Create the ResourcesComponent as a default subobject
+	AttributesComponent = CreateDefaultSubobject<UAttributesComponent>(TEXT("AttributesComponent"));
+
+	//Default Set these for now
+	AttributesComponent->Strength = 15;
+	AttributesComponent->Dexterity = 15;
+	AttributesComponent->Endurance = 18;
+	AttributesComponent->BaseSpeed = 24;
+	AttributesComponent->Intelligence = 30;
+	AttributesComponent->Light = 5;
+	AttributesComponent->Dark = 22;
+	AttributesComponent->Luck = 13;
+	AttributesComponent->Focus = 14;
+	AttributesComponent->Presence = 15;
+
+	// Create the ResourcesComponent as a default subobject
+	CurrentProgress = CreateDefaultSubobject<UProgressionComponent>(TEXT("ProgressionComponent"));
 	
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
@@ -166,12 +185,12 @@ void AReRPGCharacter::Attack()
 
 void AReRPGCharacter::DoAttack()
 {
-	// if (bIsAttacking)
-	// {
-	// 	CachedAttackInputTime = GetWorld()->GetTimeSeconds();
-	//
-	// 	return;
-	// }
+	if (bIsAttacking)
+	{
+		CachedAttackInputTime = GetWorld()->GetTimeSeconds();
+	
+		return;
+	}
 
 	Attack();
 }

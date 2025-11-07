@@ -49,7 +49,6 @@ struct AttributesComponent {
     int dark;
     int focus;
     int presence;
-    
 };
 
 
@@ -81,7 +80,7 @@ struct InventoryComponent {
     // Equipped weapons: slot → entity ID (or INVALID_ID if empty)
     std::unordered_map<WeaponSlot, entt::entity> weapons;  
 };
-
+ 
 
 // struct ItemComponent {
 //     ItemID       id;          // archetype key
@@ -117,9 +116,9 @@ struct StatusComponent {
 
 
 
-// struct MovementComponent : public Component {
-//     float speed;
-// };
+struct MovementComponent {
+    float speed;
+};
 
 // // struct AIComponent : public Component {
 // //     void updateAI(Entity& self);

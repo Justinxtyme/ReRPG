@@ -7,7 +7,7 @@
 #include "InventoryData.h"
 #include "ResourceData.h"
 #include "TransformComponent.h"
-#include "TransformData.h" // your reflected struct
+#include "TransformData.h"
 #include "GameFramework/Character.h"
 #include "Logging/LogMacros.h"
 #include "Animation/AnimInstance.h"
@@ -19,6 +19,8 @@ class USpringArmComponent;
 class UCameraComponent;
 class UInputAction;
 struct FInputActionValue;
+class UProgressionComponent;
+class UAttributesComponent;
 
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
@@ -157,6 +159,12 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="UResources")
 	UResourcesComponent* ResourcesComponent;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Progression")
+	UProgressionComponent* CurrentProgress;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Attributes")
+	UAttributesComponent* AttributesComponent;
 
 protected:
 
